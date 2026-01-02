@@ -1,0 +1,32 @@
+backend:
+  name: github
+  repo: Nishanth-6/website-redesign
+  branch: main
+
+media_folder: public/uploads
+public_path: /uploads
+
+collections:
+  - name: content
+    label: Website Content
+    files:
+      - name: publications
+        label: Publications
+        file: src/data/publications.md
+        fields:
+          - { label: Intro, name: intro, widget: text }
+          - { label: Papers, name: papers, widget: list, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}, {label: Year, name: year, widget: number}] }
+
+      - name: teaching
+        label: Teaching
+        file: src/data/teaching.md
+        fields:
+          - { label: Intro, name: intro, widget: text }
+          - { label: Contact Note, name: contactNote, widget: textarea }
+
+      - name: about
+        label: About
+        file: src/data/about.md
+        fields:
+          - { label: Background, name: background, widget: textarea }
+          - { label: Collaboration Note, name: collaborationNote, widget: textarea }
